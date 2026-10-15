@@ -65,7 +65,7 @@ class TicketsRepository:
         db.refresh(ticket)
         return ticket
 
-    def count_for_customer(self, db: Session, customer_email: str) -> int:
+    def count_open_for_customer(self, db: Session, customer_email: str) -> int:
         count = (db.query(func.count(Ticket.id))
                  .join(Customer, Customer.id == Ticket.customer_id)
                  .filter(Customer.email == customer_email, Ticket.status == "open")

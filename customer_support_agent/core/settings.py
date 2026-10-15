@@ -88,7 +88,7 @@ class Settings(BaseSettings):
             model = model[len("model/"):]
 
         deprecated_aliases = {
-             "text-embedding-004",
+            "text-embedding-004",
             "embedding-001",
             "embedding-gecko-001",
             "gemini-embedding-exp",
